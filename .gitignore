@@ -1,10 +1,9 @@
-# Static files
-/static
-/staticfiles
+# Node modules
+/node_modules
 
-# Supplementary directories
-/favicon_io
-/Additions
+# Static files
+/leadmanager/static
+/leadmanager/staticfiles
 
 #Database
 *.sqlite3
