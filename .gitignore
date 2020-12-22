@@ -77,3 +77,6 @@ local_settings.py
 
 # Text backup files
 *.bak
+
+# Jshint
+.jshintrc
