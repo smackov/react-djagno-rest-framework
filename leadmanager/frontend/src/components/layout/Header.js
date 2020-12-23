@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Header extends Component {
     render() {
@@ -19,7 +19,7 @@ export class Header extends Component {
                             <a className="nav-link" href="#">Link</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                 </div>
