@@ -30,7 +30,7 @@ export class Leads extends Component {
                     </thead>
                     <tbody>
                         {this.props.leads.map(lead => (
-                            <tr key="{lead.id}">
+                            <tr key={lead.id}>
                                 <td>{lead.id}</td>
                                 <td>{lead.name}</td>
                                 <td>{lead.email}</td>
