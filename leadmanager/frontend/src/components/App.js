@@ -14,7 +14,7 @@ import store from '../store';
 
 // Alert Options
 const alertOptions = {
-    timeout: 3000,
+    timeout: 10000,
     position: 'top center'
 };
 class App extends Component {
