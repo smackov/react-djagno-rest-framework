@@ -6,8 +6,14 @@ from .serializers import LeadSerializer
 
 # Lead viewset
 class LeadViewSet(viewsets.ModelViewSet):
-    queryset = Lead.objects.all()
     permission_classes = [
-        permissions.AllowAny,
+        permissions.IsAuthenticated,
     ]
     serializer_class = LeadSerializer
+
+    def get_queryset(self):
+        return self.request.user.leads.all()
+    
+    def perform_create(self, serializer):
+        "The func do something before of creating a note in db"
+        serializer.save(owner=self.request.user)
