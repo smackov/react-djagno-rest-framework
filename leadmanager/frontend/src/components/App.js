@@ -9,8 +9,10 @@ import AlertTemplate from 'react-alert-template-basic';
 import Header from './layout/Header';
 import Dashboard from './leads/Dashboard';
 import Alerts from './layout/Alerts';
-import Login from './accounts/Login';
-import Register from './accounts/Register';
+import { Login } from './accounts/Login';
+import { Register } from './accounts/Register';
+import PrivateRoute from './common/PrivateRoute';
+import { loadUser } from '../actions/auth';
 
 import { Provider } from 'react-redux';
 import store from '../store';
@@ -22,6 +24,10 @@ const alertOptions = {
     position: 'top center'
 };
 class App extends Component {
+    componentDidMount() {
+        store.dispatch(loadUser());
+    }
+
     render() {
         return (
             <Provider store={store}>
@@ -31,7 +37,7 @@ class App extends Component {
                             <Header />
                             <Alerts />
                             <div className="container">
-                                <Route exact path="/" component={Dashboard} />
+                                <PrivateRoute exact path="/" component={Dashboard} />
                                 <Route exact path="/register" component={Register} />
                                 <Route exact path="/login" component={Login} />
                             </div>
